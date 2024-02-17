@@ -1,0 +1,192 @@
+$info:          #0ff;
+$danger:        #ff008b;
+$success:       #079f9f;
+$warning:       #f4f7a4;
+$dark:          #000;
+$navbar-light-color:                #0ff;
+$navbar-light-hover-color:          #ff008b;
+$navbar-light-active-color:         #ff008b;
+$navbar-light-icon-color:           #0ff;
+$navbar-nav-link-padding-x:         .75rem;
+$card-title-color:                  #0ff;
+$card-border-width:                 2px;
+$card-border-color:                 #0ff;
+$card-border-radius:                20px;
+$card-bg:                           transparent;
+// OWL
+$nav-background: 		#0ff;
+$nav-background-hover:	rgba(0, 255, 255, 0.8);
+$nav-margin: 			0px 10px;
+$nav-font-size: 		15px;
+$nav-color:             #000;
+$nav-padding: 			8px 14px;
+$nav-color-hover:		#000;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../owl/src/scss/theme.default';
+
+// EXTENDS
+%title {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+}
+%background {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px #0ff,0 0 10px #0ff,0 0 10px #0ff,0 0 10px #0ff;;
+}
+%hover {
+    transition:all .5s;
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+// BODY
+body {
+    background: url('../img/cyber1.gif') no-repeat center center/cover fixed;
+    font-family: "Roboto", sans-serif;
+    color: #0ff;
+}
+a {
+    text-decoration: none;
+}
+// SECTION-1
+#section-1 {
+    nav {
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: all .5s;
+    }
+    nav.navbar-shrink {
+        padding: 15px 0;
+        box-shadow: 0 0 5px #ff008b,0 0 5px #ff008b,0 0 5px #ff008b,0 0 5px #ff008b;;
+    }
+    .logo {
+        width: 180px;
+    }
+    .nav-link {
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+}
+// SECTION-2
+#section-2 {
+    height: 85vh;
+    margin-top: 70px;
+    .container {
+        height: 60vh;
+        @extend %background;
+        h1 {
+            @extend %title;
+            line-height: 3rem;
+        }
+        p {
+            width: 75%;
+        }
+        .links {
+            i {
+                @extend %hover;
+            }
+        }
+    }
+}
+// SECTION-3
+#section-3 {
+    .col-12 {
+        @extend %background;
+        h2 {
+            @extend %title;
+            line-height: 3rem;
+            border-bottom: 1px solid #0ff;
+        }
+        .buttons {
+            width: 100%;
+        }
+        .btn {
+            @extend %hover;
+            cursor: auto;
+        }
+    }
+}
+// SECTION-4
+#section-4 {
+    .container {
+        @extend %background;
+        h2, .btn {
+            @extend %title;
+            border-bottom: 1px solid #0ff;
+        }
+        .card {
+            @extend %title;
+            h5 {
+                font-size: 30px;
+            }
+        }
+        .btn {
+            transition: all .5s;
+            border: 2px solid #0ff;
+            &:hover {
+                transform: translateX(15px);
+            }
+        }
+    }
+}
+// FOOTER
+#footer {
+    box-shadow: 0 0 5px #ff008b,0 0 5px #ff008b,0 0 5px #ff008b,0 0 5px #ff008b;;
+    background-color: rgba(0, 0, 0, 0.7);
+    h3 {
+        @extend %title;
+        line-height: 3rem;
+    }
+    a {
+        color: #0ff;
+        &:hover{
+            color: #079f9f;
+        }
+    }
+    p {
+        border-top: 1px solid #079f9f;
+    }
+}
+
+@media (min-width: 576px) {
+    %background {
+        border-radius: 3rem;
+    }
+    #section-3 {
+        .col-12 {
+            .buttons {
+                width: 80%;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    #section-2 {
+        .container {
+            height: 75vh;
+            h1 {
+                line-height: 5rem;
+                font-size: 100px;
+            }
+            p {
+                width: 60%;
+                font-size: 20px;
+            }
+            .links {
+                i {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    #section-2 {
+        .container {
+            h1 {
+                line-height: 7rem;
+                font-size: 150px;
+            }
+        }
+    }
+}
